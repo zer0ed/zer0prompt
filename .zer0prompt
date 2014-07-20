@@ -1,0 +1,109 @@
+#!/bin/bash
+
+#  zer0prompt
+#    By: Wes Brewer [zer0, zer0ed]
+#    Last updated: Oct 29, 2009
+#
+#  Credit for info & ideas: Phil!'s ZSH Prompt, Bash Prompt HOWTO, Bashish
+#
+#  Usage: Add the follwing lines to your ~/.bashrc file
+#    source ~/.zer0prompt
+#    zer0prompt
+#    unset zer0prompt
+#
+#  Todo: 
+#    - check terminal for gfx support and colour support.
+#    - add user selectable colour styles (blue, green, cyan, red, purple)
+
+############################################################
+# Colour Codes Reference
+#   Black       0;30     Dark Gray     1;30
+#   Blue        0;34     Light Blue    1;34
+#   Green       0;32     Light Green   1;32
+#   Cyan        0;36     Light Cyan    1;36
+#   Red         0;31     Light Red     1;31
+#   Purple      0;35     Light Purple  1;35
+#   Brown       0;33     Yellow        1;33
+#   Light Gray  0;37     White         1;37
+
+# configure info colours (non-printing escapes included)
+info1="\[\033[1;32m\]"
+info2="\[\033[1;35m\]"
+info3="\[\033[1;33m\]"
+
+# configure prompt graphics
+ln="─"
+box1="┌"
+box2="└"
+oinfo="┤"
+cinfo="├"
+arrow=">"
+
+############################################################
+
+# Some terminals fail to set the COLUMNS variable before the first prompt is
+# displayed. The result being an incomplete, non-fullscreen first prompt.
+# Workaround: Use bash builtin checkwinsize option for checking termial sizes.
+shopt -s checkwinsize
+
+# if username is root then colour info1 red
+if [ "${UID}" = 0 ] ; then
+  info1="\[\033[1;31m\]"
+fi
+
+# This function is run at every prompt update to check for variable changes.
+# Bash's PROMPT_COMMAND option handles this (see end of this function).
+function prompt_command {
+  # show exit code if last command failed
+  xstatus="${?}"
+  if [ "$xstatus" = "0" ] ; then
+    xstatus=""
+  fi
+
+  # grab the terminal width
+  local termwidth=${COLUMNS}
+  # grab info used in prompt
+  local hostnam=$(hostname -s)
+  local usernam=$(whoami)
+
+  # shorten users HOME dir to a tilde ~ (using substring replacement)
+  newPWD=${PWD/#$HOME/\~}
+
+  # set size of info (without filler)
+  local infosize="${usernam}@${hostnam}${newPWD}"
+  # set size of graphics (without filler)
+  local gfxsize=24
+
+  # determine how big to make the filler for full terminal width
+  let fillsize=${termwidth}-${gfxsize}-${#infosize}
+  filler=""
+  while [ "$fillsize" -gt "0" ] ; do
+    filler="$filler$ln"
+    let fillsize=${fillsize}-1
+  done
+
+  # determine how much to truncate PWD, if filler can't shrink anymore.
+  if [ "$fillsize" -lt "0" ] ; then
+    let cut=3-${fillsize}
+    newPWD="...${newPWD:${cut}}"
+  fi
+}
+PROMPT_COMMAND=prompt_command
+
+
+# This function tells bash how to draw our prompt
+function zer0prompt {
+  local cl1="\[\033[1;37m\]"
+  local cl2="\[\033[1;36m\]"
+  local cl3="\[\033[0;36m\]"
+  local cl4="\[\033[0;37m\]"
+  local clx="\[\033[1;31m\]"
+  local cl0="\[\033[0m\]"
+
+PS1="$cl1$box1$ln$cl2$ln$cl3$ln$oinfo$info1\u@\h$cl3$cinfo$ln$cl4$ln$ln$cl3\
+\$filler$cl2$ln$ln$ln$ln$ln$cl1$ln$ln$ln$cl2$ln$ln$cl3$ln$oinfo$info2\
+\$newPWD$cl3$cinfo$ln$cl4$ln
+$cl2$box2$cl3$ln$oinfo$info3\A$cl3$cinfo$clx\$xstatus$cl4$ln$cl2$arrow$cl0 "
+
+PS2="$cl2$box2$cl3$ln$cl4$ln$cl2$arrow$cl0 "
+}
