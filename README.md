@@ -34,7 +34,13 @@ Installation:
 >  zer0prompt  
 >  unset zer0prompt  
 
-3. [optional] repeat the above steps for the root user if you want a red prompt notification when using su or root user.
+[optional] repeat the above steps for the root user if you want a red prompt notification when using su or root user.
+
+
+Configuration:
+--------------
+
+Settings for zer0prompt can be found in the .zer0prompt file under the USER CONFIGURATION heading.
 
 
 Similar Projects and Credit:
