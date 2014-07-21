@@ -30,9 +30,11 @@ Installation:
 1. place .zer0prompt in your home directory ~
 2. add the following lines to your ~/.bashrc
 
->	source ~/.zer0prompt
->	zer0prompt
->	unset zer0prompt
+>  source ~/.zer0prompt
+
+>  zer0prompt
+
+>  unset zer0prompt
 
 3. [optional] repeat the above steps for the root user if you want a red prompt notification when using su or root user.
 
