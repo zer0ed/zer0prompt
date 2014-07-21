@@ -30,11 +30,9 @@ Installation:
 1. place .zer0prompt in your home directory ~
 2. add the following lines to your ~/.bashrc
 
->  source ~/.zer0prompt
-
->  zer0prompt
-
->  unset zer0prompt
+>  source ~/.zer0prompt  
+>  zer0prompt  
+>  unset zer0prompt  
 
 3. [optional] repeat the above steps for the root user if you want a red prompt notification when using su or root user.
 
@@ -44,7 +42,7 @@ Similar Projects and Credit:
 
 Below are some of the projects where I obtained ideas and information for creating zer0prompt.
 
-Phil!'s ZSH Prompt - http://aperiodic.net/phil/prompt/
-Bashish - http://bashish.sourceforge.net/
-TERMWIDE prompt - http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x869.html
-Bash Prompt Howto - http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/
+Phil!'s ZSH Prompt - http://aperiodic.net/phil/prompt/  
+Bashish - http://bashish.sourceforge.net/  
+TERMWIDE prompt - http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x869.html  
+Bash Prompt Howto - http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/  
