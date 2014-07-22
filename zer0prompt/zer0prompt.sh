@@ -20,6 +20,13 @@ else
   zg1="-"; zg2="r"; zg3="L"; zg4="|"; zg5="|"; zg6=">" # fallback GFX
 fi
 
+# set inverse mode if set
+if [ "$zpcl_inverse" = "1" ]; then
+  zci="\[\033[7m\]"   #inverse
+else
+  zci=""
+fi
+
 # if root user then colour user@host info and user identifier red.
 [ "${UID}" = 0 ] && zi1="\[\033[1;31m\]" && zi5="\[\033[1;31m\]"
 
@@ -103,12 +110,12 @@ function zer0prompt {
 
 # standard prompt
 PS1="${TITLEBAR}\
-$zc1$zg2$zg1$zc3$zg1$zc4$zg1$zg4$zi1\u@\h:\l$zc4$zg5$zg1$zc2$zg1$zg1$zc4\
-\$ZFILL$zc3$zg1$zg1$zg1$zg1$zc1$zg1$zg1$zg1$zc3$zg1$zg1$zc4$zg1$zg4$zi2\
-\$ZPWD$zc4$zg5$zg1$zc2$zg1
-$zc3$zg3$zc4$zg1$zg4$zi3$ZTIME$zc4 $zi5\\\$$zc4$zg5$zi4\
-\$ZEXIT$zc2$zg1$zc3$zg6$zc0 "
+$zc1$zci$zg2$zg1$zc3$zg1$zc4$zci$zg1$zg4$zi1\u@\h:\l$zc4$zci$zg5$zg1$zc2$zci$zg1$zg1$zc4$zci\
+\$ZFILL$zc3$zg1$zg1$zg1$zg1$zc1$zg1$zg1$zg1$zc3$zg1$zg1$zc4$zci$zg1$zg4$zi2\
+\$ZPWD$zc4$zci$zg5$zg1$zc2$zci$zg1
+$zc3$zg3$zc4$zci$zg1$zg4$zi3$ZTIME$zci $zi5\\\$$zc4$zci$zg5$zi4\
+\$ZEXIT$zc2$zci$zg1$zc3$zg6$zc0 "
 
 # continuation prompt
-PS2="$zc3$zg3$zc4$zg1$zg4$zi5\\\$$zc4$zg5$zc2$zg1$zc3$zg6$zc0 "
+PS2="$zc3$zci$zg3$zc4$zci$zg1$zg4$zi5\\\$$zc4$zci$zg5$zc2$zci$zg1$zc3$zg6$zc0 "
 }
