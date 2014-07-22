@@ -27,10 +27,10 @@ Features:
 Installation:
 -------------
 
-1. place .zer0prompt in your home directory ~
+1. place the zer0prompt directory in your home directory ~
 2. add the following lines to your ~/.bashrc
 
->  source ~/.zer0prompt  
+>  source zer0prompt/zer0prompt  
 >  zer0prompt  
 >  unset zer0prompt  
 
@@ -40,7 +40,7 @@ Installation:
 Configuration:
 --------------
 
-Settings for zer0prompt can be found in the .zer0prompt file under the USER CONFIGURATION heading.
+Settings for zer0prompt can be found in the zer0prompt file under the USER CONFIGURATION heading.
 
 
 Similar Projects and Credit:
