@@ -27,8 +27,11 @@ else
   zci=""
 fi
 
-# if root user then colour user@host info and user identifier red.
-[ "${UID}" = 0 ] && zi1="\[\033[1;31m\]" && zi5="\[\033[1;31m\]"
+# set user info same colour as user selected host info colour
+zi0=$zi1
+
+# if root user then colour user info and user identifier red.
+[ "${UID}" = 0 ] && zi0="\[\033[1;31m\]" && zi5="\[\033[1;31m\]"
 
 # this function is run at every prompt update, keeping our variables updated.
 # bash's PROMPT_COMMAND option handles this (see end of this function).
@@ -99,7 +102,7 @@ function zer0prompt {
 
 # standard prompt
 PS1="${TITLEBAR}\
-$zc1$zci$zg2$zg1$zc3$zg1$zc4$zci$zg1$zg4$zi1\u@\h:\l$zc4$zci$zg5$zg1$zc2$zci$zg1$zg1$zc4$zci\
+$zc1$zci$zg2$zg1$zc3$zg1$zc4$zci$zg1$zg4$zi0\u$zi1@\h:\l$zc4$zci$zg5$zg1$zc2$zci$zg1$zg1$zc4$zci\
 \$ZFILL$zc3$zg1$zg1$zg1$zg1$zc1$zg1$zg1$zg1$zc3$zg1$zg1$zc4$zci$zg1$zg4$zi2\
 \$ZPWD$zc4$zci$zg5$zg1$zc2$zci$zg1
 $zc3$zg3$zc4$zci$zg1$zg4$zi3\D{$ztime}$zci $zi5\\\$$zc4$zci$zg5$zi4\
