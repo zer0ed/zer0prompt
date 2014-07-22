@@ -1,37 +1,11 @@
 #!/bin/bash
 
-####################### [USER CONFIGURATION] #######################
-# You can change various settings for zer0prompt below!
-
-### set zer0prompt colour theme ###
-# options -- cyan, blue, green, red, purple, yellow, black, white, none
-zpcl="cyan"
-
-### set colours for various info ###
-# colour reference at http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
-zi1="\[\033[1;32m\]"  # user@host:tty
-zi2="\[\033[1;35m\]"  # current path
-zi3="\[\033[1;33m\]"  # time
-zi4="\[\033[1;31m\]"  # exit status
-zi5="\[\033[1;32m\]"  # user identifier ($ or #)
-
-### set time format ###
-# options --
-# 12  (12 hour, am/pm)
-# 24  (24 hour)
-# 12s (12 hour with seconds)
-# 24s (24 hour with seconds)
-zptm="12"
-
-### override line graphics ###
-# uncomment to force line graphics into fallback mode
-#zgfx_override=1
-
-
-
 ############################ [MAIN CODE] ############################
 # DO NOT alter below this line unless you know what you are doing!
-# There are no more user configuration options below.
+# user configuration options are found in zer0prompt.conf
+
+# grab user config files via import
+source ~/zer0prompt/zer0prompt.conf
 
 # use bash builtin checkwinsize option for terminals which fail to properly
 # set the $COLUMNS variable. (bug workaround)

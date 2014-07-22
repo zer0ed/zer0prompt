@@ -30,7 +30,7 @@ Installation:
 1. place the zer0prompt directory in your home directory ~
 2. add the following lines to your ~/.bashrc
 
->  source zer0prompt/zer0prompt  
+>  source ~/zer0prompt/zer0prompt.sh  
 >  zer0prompt  
 >  unset zer0prompt  
 
