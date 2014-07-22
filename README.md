@@ -40,7 +40,7 @@ Installation:
 Configuration:
 --------------
 
-Settings for zer0prompt can be found in the zer0prompt file under the USER CONFIGURATION heading.
+Settings for zer0prompt can be found in the zer0prompt/zer0prompt.conf file.
 
 
 Similar Projects and Credit:

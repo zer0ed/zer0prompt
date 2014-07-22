@@ -12,7 +12,7 @@ source ~/zer0prompt/zer0prompt.conf
 shopt -s checkwinsize
 
 # set line graphics to use based on locale
-if [ "$zgfx_override" = 1 ]; then
+if [ "$zgfx_override" = "1" ]; then
   zg1="-"; zg2="r"; zg3="L"; zg4="|"; zg5="|"; zg6=">" # fallback GFX (forced)
 elif [ $(locale charmap) = "UTF-8" ]; then
   zg1="─"; zg2="┌"; zg3="└"; zg4="┤"; zg5="├"; zg6=">" # better GFX
@@ -89,17 +89,6 @@ function zer0prompt {
     zi1=""; zi2=""; zi3=""; zi4=""; zi5=""
   fi
 
-  # set time format
-  if [ "$zptm" = "24" ]; then
-    local ZTIME="\A"
-  elif [ "$zptm" = "12s" ]; then
-    local ZTIME="\T"
-  elif [ "$zptm" = "24s" ]; then
-    local ZTIME="\t"
-  else
-    local ZTIME="\@"
-  fi
-
   # set titlebar info if xterm/rxvt
   case $TERM in
     xterm*|rxvt*)
@@ -113,7 +102,7 @@ PS1="${TITLEBAR}\
 $zc1$zci$zg2$zg1$zc3$zg1$zc4$zci$zg1$zg4$zi1\u@\h:\l$zc4$zci$zg5$zg1$zc2$zci$zg1$zg1$zc4$zci\
 \$ZFILL$zc3$zg1$zg1$zg1$zg1$zc1$zg1$zg1$zg1$zc3$zg1$zg1$zc4$zci$zg1$zg4$zi2\
 \$ZPWD$zc4$zci$zg5$zg1$zc2$zci$zg1
-$zc3$zg3$zc4$zci$zg1$zg4$zi3$ZTIME$zci $zi5\\\$$zc4$zci$zg5$zi4\
+$zc3$zg3$zc4$zci$zg1$zg4$zi3\D{$ztime}$zci $zi5\\\$$zc4$zci$zg5$zi4\
 \$ZEXIT$zc2$zci$zg1$zc3$zg6$zc0 "
 
 # continuation prompt
