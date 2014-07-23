@@ -87,9 +87,9 @@ function zer0prompt {
     local zc3="\[\033[1;30m\]"; local zc4="\[\033[0;30m\]"
    elif [ "$zpcl" = "white" ]; then
     local zc3="\[\033[1;37m\]"; local zc4="\[\033[0;37m\]"
-  else  # no colour
+  else  # none (no colour)
     local zc3=""; local zc4=""; local zc1=""; local zc2=""
-    zi1=""; zi2=""; zi3=""; zi4=""; zi5=""
+    zi0=""; zi1=""; zi2=""; zi3=""; zi4=""; zi5=""
   fi
 
   # set titlebar info if xterm/rxvt
