@@ -9,6 +9,7 @@ It was time to roll up my sleeves and write my own, the way I wanted it and so z
 Features:
 ---------
 
+* 18 different colour themes
 * a TERMWIDE prompt, fills the width of the terminal no matter how wide.
 * 2 line prompt
 * the following info is always shown = user, host, current tty, working directory, time, user identifier
@@ -17,9 +18,10 @@ Features:
 * continuation prompt
 * when logged in as root user, display info in red as a visual reminder.
 * displays the exit code when a command fails
-* sets xterm/rxvt terminal titles (shows username, WIDTHxLENGTH, and directory)
+* sets xterm/rxvt terminal titles (shows username, working directory. and terminal size)
 * user selectable colour themes, info colours, time format, and line graphics
-* user can manually set “no colour mode” and/or “safe line graphics” mode
+* auto detection of supported line graphics mode (standard or fallback)
+* user can manually set “no colour mode” and/or “graphics fallback mode"
 * very easy to install without making a mess of your .bashrc
 * tries not to pollute your bash environment!
 
