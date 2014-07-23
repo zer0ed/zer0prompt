@@ -54,3 +54,17 @@ Phil!'s ZSH Prompt - http://aperiodic.net/phil/prompt/
 Bashish - http://bashish.sourceforge.net/  
 TERMWIDE prompt - http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x869.html  
 Bash Prompt Howto - http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/  
+
+
+Screenshots:
+------------
+
+![screenshot](/screenshots/prompt.png?raw=true)
+![screenshot](/screenshots/colour themes.png?raw=true)
+![screenshot](/screenshots/colour themes - inverted.png?raw=true)
+![screenshot](/screenshots/xterm titlebar.png?raw=true)
+![screenshot](/screenshots/continuation prompt.png?raw=true)
+![screenshot](/screenshots/directory truncation.png?raw=true)
+![screenshot](/screenshots/root notification.png?raw=true)
+![screenshot](/screenshots/error exit code.png?raw=true)
+![screenshot](/screenshots/graphics fallback mode.png?raw=true)
