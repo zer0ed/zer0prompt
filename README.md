@@ -59,12 +59,12 @@ Bash Prompt Howto - http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/
 Screenshots:
 ------------
 
-![screenshot](/screenshots/prompt.png?raw=true)
-![screenshot](/screenshots/colour themes.png?raw=true)
-![screenshot](/screenshots/colour themes - inverted.png?raw=true)
-![screenshot](/screenshots/xterm titlebar.png?raw=true)
-![screenshot](/screenshots/continuation prompt.png?raw=true)
-![screenshot](/screenshots/directory truncation.png?raw=true)
-![screenshot](/screenshots/root notification.png?raw=true)
-![screenshot](/screenshots/error exit code.png?raw=true)
-![screenshot](/screenshots/graphics fallback mode.png?raw=true)
+![screenshot](/screenshots/prompt.png?raw=true "prompt")
+![screenshot](/screenshots/colour themes.png?raw=true "colour themes")
+![screenshot](/screenshots/colour themes - inverted.png?raw=true "colour themes - inverted")
+![screenshot](/screenshots/xterm titlebar.png?raw=true "xterm titlebar")
+![screenshot](/screenshots/prompt continuation.png?raw=true "prompt continuation")
+![screenshot](/screenshots/directory truncation.png?raw=true "directory truncation")
+![screenshot](/screenshots/root notification.png?raw=true "root notification")
+![screenshot](/screenshots/error exit code.png?raw=true "error exit code")
+![screenshot](/screenshots/graphics fallback mode.png?raw=true "graphics fallback mode")
