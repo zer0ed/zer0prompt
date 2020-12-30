@@ -12,12 +12,12 @@ source ~/zer0prompt/zer0prompt.conf
 shopt -s checkwinsize
 
 # set line graphics to use based on locale
-if [ "$zgfx_override" = "1" ]; then
-  zg1="-"; zg2="r"; zg3="L"; zg4="|"; zg5="|"; zg6=">" # fallback GFX (forced)
+if [ "$zgfx_fallback" = "1" ]; then
+  zg1="-"; zg2="r"; zg3="L"; zg4="|"; zg5="|"; zg6=">" # ASCII graphics (forced by user config)
 elif [ $(locale charmap) = "UTF-8" ]; then
-  zg1="─"; zg2="┌"; zg3="└"; zg4="┤"; zg5="├"; zg6=">" # better GFX
+  zg1="─"; zg2="┌"; zg3="└"; zg4="┤"; zg5="├"; zg6=">" # unicode console (UTF-8 graphics supported)
 else
-  zg1="-"; zg2="r"; zg3="L"; zg4="|"; zg5="|"; zg6=">" # fallback GFX
+  zg1="-"; zg2="r"; zg3="L"; zg4="|"; zg5="|"; zg6=">" # ASCII console (UTF-8 graphics not supported)
 fi
 
 # set inverse mode if set
