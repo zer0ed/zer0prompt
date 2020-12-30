@@ -26,23 +26,20 @@ Features:
 * tries not to pollute your bash environment!
 
 
-Installation:
--------------
+Usage:
+------
 
-1. place the zer0prompt directory in your home directory ~
-2. add the following lines to your ~/.bashrc
+1. Clone the project from github to your local machine
+
+>  git clone https://github.com/zer0ed/zer0prompt.git
+
+2. Configure user options in zer0prompt/zer0prompt.conf ([optional)
+
+3. Add the following lines to your ~/.bashrc
 
 >  source ~/zer0prompt/zer0prompt.sh  
 >  zer0prompt  
 >  unset zer0prompt  
-
-[optional] repeat the above steps for the root user if you want a red prompt notification when using su or root user.
-
-
-Configuration:
---------------
-
-Settings for zer0prompt can be found in the zer0prompt/zer0prompt.conf file.
 
 
 Similar Projects and Credit:
