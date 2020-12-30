@@ -59,12 +59,12 @@ Bash Prompt Howto - http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/
 Screenshots:
 ------------
 
-![screenshot](/screenshots/prompt.png?raw=true "prompt")
-![screenshot](/screenshots/colour_themes.png?raw=true "colour themes")
-![screenshot](/screenshots/colour_themes_inverted.png?raw=true "colour themes inverted")
-![screenshot](/screenshots/xterm_titlebar.png?raw=true "xterm titlebar")
-![screenshot](/screenshots/prompt_continuation.png?raw=true "prompt continuation")
-![screenshot](/screenshots/directory_truncation.png?raw=true "directory truncation")
-![screenshot](/screenshots/root_notification.png?raw=true "root notification")
-![screenshot](/screenshots/error_exit_code.png?raw=true "error exit code")
-![screenshot](/screenshots/graphics_fallback_mode.png?raw=true "graphics fallback mode")
+![screenshot](.screenshots/prompt.png?raw=true "prompt")
+![screenshot](.screenshots/colour_themes.png?raw=true "colour themes")
+![screenshot](.screenshots/colour_themes_inverted.png?raw=true "colour themes inverted")
+![screenshot](.screenshots/xterm_titlebar.png?raw=true "xterm titlebar")
+![screenshot](.screenshots/prompt_continuation.png?raw=true "prompt continuation")
+![screenshot](.screenshots/directory_truncation.png?raw=true "directory truncation")
+![screenshot](.screenshots/root_notification.png?raw=true "root notification")
+![screenshot](.screenshots/error_exit_code.png?raw=true "error exit code")
+![screenshot](.screenshots/graphics_fallback_mode.png?raw=true "graphics fallback mode")
