@@ -41,6 +41,8 @@ Usage:
 
 4. Logout then Login to refresh the changes.
 
+5. Repeat the above steps for the root user if you want a red prompt when using su or root user (optional).
+
 
 Similar Projects and Credit:
 ----------------------------
