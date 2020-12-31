@@ -33,7 +33,7 @@ Usage:
 
 >  git clone https://github.com/zer0ed/zer0prompt.git
 
-2. Configure user options in zer0prompt/zer0prompt.conf ([optional)
+2. Configure user options in zer0prompt/zer0prompt.conf (optional)
 
 3. Add the following lines to your ~/.bashrc
 
