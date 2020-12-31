@@ -1,0 +1,5 @@
+
+## added by zer0prompt
+source ~/zer0prompt/zer0prompt.sh
+zer0prompt
+unset zer0prompt

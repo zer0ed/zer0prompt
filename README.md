@@ -29,17 +29,17 @@ Features:
 Usage:
 ------
 
-1. Clone the project from github to your local machine
+1. Clone the project from github to your local machine.
 
 >  git clone https://github.com/zer0ed/zer0prompt.git
 
-2. Configure user options in zer0prompt/zer0prompt.conf (optional)
+2. Configure user options in zer0prompt/zer0prompt.conf (optional).
 
-3. Add the following lines to your ~/.bashrc
+3. Append the needed lines into .bashrc
 
->  source ~/zer0prompt/zer0prompt.sh  
->  zer0prompt  
->  unset zer0prompt  
+>  cat zer0prompt/install.txt >> ~/.bashrc 
+
+4. Logout then Login to refresh the changes.
 
 
 Similar Projects and Credit:
