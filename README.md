@@ -1,4 +1,4 @@
-zer0prompt
+zer0prompt 
 ==========
 
 zer0prompt is a Bash prompt I created after discovering Phil!’s ZSH Prompt. I liked how Phil!’s prompt looked and some of it’s various features but I’m a happy Bash shell user with no need to switch to Z shell. I searched the Internet for various Bash prompts similar to the Phil! ZSH prompt without luck. I tried Bashish but felt there was too much extra going on “under the hood” for what I needed.
