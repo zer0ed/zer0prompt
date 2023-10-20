@@ -12,14 +12,13 @@ source ~/zer0prompt/zer0prompt.conf
 shopt -s checkwinsize
 
 # set line graphics to use based on locale
-# if [ "$zgfx_fallback" = "1" ]; then
-#   zg1="-"; zg2="r"; zg3="L"; zg4="|"; zg5="|"; zg6=">" # ASCII graphics (forced by user config)
-# elif [ $(locale charmap) = "UTF-8" ]; then
-  #zg1="─"; zg2="┌"; zg3="└"; zg4="┤"; zg5="├"; zg6=">" # unicode console (UTF-8 graphics supported)
-  zp_gfx=("─" "┌" "└" "┤" "├" ">")
-# else
-#   zg1="-"; zg2="r"; zg3="L"; zg4="|"; zg5="|"; zg6=">" # ASCII console (UTF-8 graphics not supported)
-# fi
+if [ "$zgfx_fallback" = "1" ]; then
+  zg1="-"; zg2="r"; zg3="L"; zg4="|"; zg5="|"; zg6=">" # ASCII graphics (forced by user config)
+elif [ $(locale charmap) = "UTF-8" ]; then
+  zg1="─"; zg2="┌"; zg3="└"; zg4="┤"; zg5="├"; zg6=">" # unicode console (UTF-8 graphics supported)
+else
+  zg1="-"; zg2="r"; zg3="L"; zg4="|"; zg5="|"; zg6=">" # ASCII console (UTF-8 graphics not supported)
+fi
 
 # set inverse mode if set
 if [ "$zpcl_inverse" = "1" ]; then
@@ -53,7 +52,7 @@ function pre_prompt {
   let fillsize=${COLUMNS}-${gfxlength}-${#infolength}
   ZFILL=""
   while [ "$fillsize" -gt "0" ]; do
-    ZFILL="$ZFILL${zp_gfx[0]}"
+    ZFILL="$ZFILL$zg1"
     let fillsize=${fillsize}-1
   done
 
@@ -101,31 +100,14 @@ function zer0prompt {
       local TITLEBAR="";;
   esac
 
+# standard prompt
+PS1="${TITLEBAR}\
+$zc1$zci$zg2$zg1$zc3$zg1$zc4$zci$zg1$zg4$zi0\u$zi1@\h:\l$zc4$zci$zg5$zg1$zc2$zci$zg1$zg1$zc4$zci\
+\$ZFILL$zc3$zg1$zg1$zg1$zg1$zc1$zg1$zg1$zg1$zc3$zg1$zg1$zc4$zci$zg1$zg4$zi2\
+\$ZPWD$zc4$zci$zg5$zg1$zc2$zci$zg1
+$zc3$zg3$zc4$zci$zg1$zg4$zi3\D{$ztime}$zci $zi5\\\$$zc4$zci$zg5$zi4\
+\$ZEXIT$zc2$zci$zg1$zc3$zg6$zc0 "
 
-  ## build the prompt sets (left to right, top to bottom)
-  # first line of graphics up to user@host info 
-  zp_set1="$zc1$zci${zp_gfx[1]}${zp_gfx[0]}$zc3${zp_gfx[0]}$zc4$zci${zp_gfx[0]}${zp_gfx[3]}"
-  # user@host:tty
-  zp_set2="$zi0\u$zi1@\h:\l"
-  # middle graphics between user@host and current path (auto-filled to fit terminal width)
-  zp_set3="$zc4$zci${zp_gfx[4]}${zp_gfx[0]}$zc2$zci${zp_gfx[0]}${zp_gfx[0]}$zc4$zci\
-\$ZFILL$zc3${zp_gfx[0]}${zp_gfx[0]}${zp_gfx[0]}${zp_gfx[0]}$zc1${zp_gfx[0]}${zp_gfx[0]}\
-${zp_gfx[0]}$zc3${zp_gfx[0]}${zp_gfx[0]}$zc4$zci${zp_gfx[0]}${zp_gfx[3]}"
-  # current path
-  zp_set4="$zi2\$ZPWD"
-  # last graphics of first line
-  zp_set5="$zc4$zci${zp_gfx[4]}${zp_gfx[0]}$zc2$zci${zp_gfx[0]}"
-  # second line of graphics up to time, user identifier
-  zp_set6="
-$zc3${zp_gfx[2]}$zc4$zci${zp_gfx[0]}${zp_gfx[3]}"
-  # time, user identifier
-  zp_set7="$zi3\D{$ztime}$zci $zi5\\\$"
-  # final set of graphics before cursor (including exit code if not 0)
-  zp_set8="$zc4$zci${zp_gfx[4]}$zi4\$ZEXIT$zc2$zci${zp_gfx[0]}$zc3${zp_gfx[5]}$zc0 "
-
-
-  # set standard bash prompt
-  PS1="${TITLEBAR}$zp_set1$zp_set2$zp_set3$zp_set4$zp_set5$zp_set6$zp_set7$zp_set8"
-  # set continuation bash prompt
-  PS2="$zc3$zci${zp_gfx[2]}$zc4$zci${zp_gfx[0]}${zp_gfx[3]}$zi5\\\$$zc4$zci${zp_gfx[4]}$zc2$zci${zp_gfx[0]}$zc3${zp_gfx[5]}$zc0 "
+# continuation prompt
+PS2="$zc3$zci$zg3$zc4$zci$zg1$zg4$zi5\\\$$zc4$zci$zg5$zc2$zci$zg1$zc3$zg6$zc0 "
 }
